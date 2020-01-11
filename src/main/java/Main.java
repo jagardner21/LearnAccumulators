@@ -23,7 +23,7 @@ public class Main {
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ DOUBLE LETTERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~
         String string = "abc";
         String doubleLettersResult = doubleLetters(string);
-        System.out.println("DOUBLE LETTERS RESULT: " + doubleLettersResult);
+        System.out.println("DOUBLE LETTERS : " + doubleLettersResult);
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ DOUBLE LETTERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     }
 
