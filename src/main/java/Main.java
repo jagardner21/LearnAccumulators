@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -23,8 +21,30 @@ public class Main {
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ DOUBLE LETTERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~
         String string = "abc";
         String doubleLettersResult = doubleLetters(string);
-        System.out.println("DOUBLE LETTERS : " + doubleLettersResult);
+        System.out.println("DOUBLE LETTERS: " + doubleLettersResult);
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ DOUBLE LETTERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERLEAVE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        char[] letters1 = {'a', 'c'};
+        char[] letters2 = {'b', 'd'};
+        ArrayList<Character> interleaveResult = interleave(letters1, letters2);
+        System.out.println("INTERLEAVE: " + interleaveResult);
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERLEAVE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ CREATE RANGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        int quantity = 5;
+        String word = "hello";
+        ArrayList<String> createRangeResult = createRange(quantity, word);
+        System.out.println("CREATE RANGE: " + createRangeResult);
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ CREATE RANGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ FLIP ARRAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        String[] wordList = {"Hello", "There", "Dude"};
+        Map<String, Integer> flipArrayResult = flipArray(wordList);
+        System.out.println("FLIP ARRAY: " + flipArrayResult);
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ FLIP ARRAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
     }
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ DOUBLE NUMBERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,5 +82,40 @@ public class Main {
     }
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ DOUBLE LETTERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERLEAVE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public static ArrayList<Character> interleave(char[] letters1, char[] letters2){
+        ArrayList<Character> combinedChars = new ArrayList<>();
+
+        for (int i = 0; i < letters1.length; i++){
+            combinedChars.add(letters1[i]);
+            combinedChars.add(letters2[i]);
+        }
+
+        return combinedChars;
+    }
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERLEAVE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ CREATE RANGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public static ArrayList<String> createRange(int quantity, String word){
+        ArrayList<String> repeatedWords = new ArrayList<>();
+
+        for (int i = 0; i < quantity; i++){
+            repeatedWords.add(word);
+        }
+
+        return repeatedWords;
+    }
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ CREATE RANGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ FLIP ARRAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public static Map<String, Integer> flipArray(String[] wordList){
+        Map<String, Integer> wordIndices = new HashMap<>();
+
+        for(int i = 0; i < wordList.length; i++){
+            wordIndices.put(wordList[i], i);
+        }
+        return wordIndices;
+    }
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ FLIP ARRAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 }
