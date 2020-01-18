@@ -1,5 +1,7 @@
 import java.util.*;
 
+import static java.lang.Integer.parseInt;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -44,8 +46,22 @@ public class Main {
         System.out.println("FLIP ARRAY: " + flipArrayResult);
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ FLIP ARRAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ARRAYS TO OBJECT ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        String[][] numberWordPairs = {{"2000", "Blue"}, {"2020", "Red"}, {"2010", "Green"}};
+        Map<Integer, String> arraysToObjectResult = arraysToObject(numberWordPairs);
+        System.out.println("ARRAYS TO OBJECT " + arraysToObjectResult);
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ARRAYS TO OBJECT ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ REVERSE STRING ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        String forwardString = "Hello";
+        String reversedStringResult = reverseString(forwardString);
+        System.out.println("REVERSE STRING: " + reversedStringResult);
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ REVERSE STRING ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     }
+
+
+    /////////////////////// METHOD DECLARATIONS ////////////////////////
+
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ DOUBLE NUMBERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public static ArrayList<Integer> doubleNumbers(int[] arr){
@@ -118,4 +134,29 @@ public class Main {
     }
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ FLIP ARRAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ARRAYS TO OBJECT ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public static HashMap<Integer, String> arraysToObject(String[][] arrayOfPairs){
+
+        HashMap<Integer, String> newObject = new HashMap<>();
+
+        for(int i = 0; i < arrayOfPairs.length; i++){
+            int numberVersion = parseInt(arrayOfPairs[i][0]);
+            newObject.put(numberVersion, arrayOfPairs[i][1]);
+        }
+
+        return newObject;
+    }
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ARRAYS TO OBJECT ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ REVERSE STRING ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public static String reverseString(String string){
+        String reversedString = "";
+
+        for(int i = string.length()-1; i >= 0; i--){
+            reversedString += string.charAt(i);
+        }
+
+        return reversedString;
+    }
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ REVERSE STRING ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
